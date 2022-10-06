@@ -46,7 +46,7 @@ export default function Home() {
 
     return (
         <div>
-            <h2>Most Recent characters: </h2>
+            <h2>Characters</h2>
             {characterLinks}
         </div>
     )
