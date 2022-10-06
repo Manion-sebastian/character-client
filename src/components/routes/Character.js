@@ -12,8 +12,8 @@ export default function Character() {
         const getCharacter = async () => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/character/${id}`)
-                console.log(response.data)
-                // setCharacter(response.data)
+                // console.log(response.data.editCharacter)
+                setCharacter(response.data.editCharacter)
                 
                 
             } catch(err) {
@@ -31,7 +31,15 @@ export default function Character() {
 
     return(
         <div>
-            Character Component
+            <div>
+                <h1>Name: {character.name}</h1>
+                <h2>Class: {character.class}</h2>
+            </div>
+            <div>
+                <p>{character.ancestry}</p>
+                <p>{character.diety}</p>
+                <p>{character.age}</p>
+            </div>
         </div>
     )
 }
